@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Участники{% endblock %}
+
+{% block content %}
+<h1>Список участников</h1>
+<ul class="participant-list">
+    {% for participant in participants %}
+    <li>
+        <span>{{ participant.name }}</span> (<a href="mailto:{{ participant.email }}">{{ participant.email }}</a>) <b>Задание: {{ participant.task }}</b>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

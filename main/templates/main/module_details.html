@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+{% block title %}{{ module.title }} - Задачи{% endblock %}
+
+{% block content %}
+<h1>{{ module.title }}</h1>
+<p>{{ module.description }}</p>
+
+<h2>Задания</h2>
+<div class="tasks-container">
+    <ul class="tasks-list">
+        {% for task in tasks %}
+        <li class="task-item">
+            <div class="task-info">
+                <strong>{{ task.title }}</strong> - {{ task.description }} ({{ task.skills }})
+            </div>
+            <div class="task-actions">
+                <a href="{% url 'edit_task' task.id %}" class="btn btn-edit">Редактировать</a>
+                <a href="{% url 'delete_task' task.id %}" class="btn btn-delete" onclick="return confirm('Вы уверены?')">Удалить</a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="add-task-container">
+    <a href="{% url 'manage_tasks' %}" class="btn add-task">Добавить задание</a>
+</div>
+
+{% endblock %}

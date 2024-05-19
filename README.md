@@ -53,7 +53,7 @@ pip install -r requirements.txt
 База данных:
 - `DB_ENGINE` - тип базы данных
 - `DB_HOST` - хост базы данных
-- `DB_POST` - порт базы данных
+- `DB_PORT` - порт базы данных
 - `DB_NAME` - название базы данных
 - `DB_USER` - имя пользователя
 - `DB_PASSWORD` - пароль пользователя

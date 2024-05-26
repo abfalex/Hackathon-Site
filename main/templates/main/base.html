@@ -2,13 +2,16 @@
 {% load static %}
 <html lang="ru">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Хакатон{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'main/styles.css' %}">
+    <link rel="shortcut icon" href="{% static 'main/images/logo.svg' %}" type="image/x-icon">
+    <link href="{% static 'main/styles/styles.css' %}" rel="stylesheet">
 </head>
 <body>
     <div class="navbar">
         <div class="container">
-            <h1>Хакатон</h1>
+            <h1><a href="{% url 'home' %}">Хакатон</a></h1>
             <nav>
                 <ul>
                     <li><a href="{% url 'home' %}">Главная</a></li>
